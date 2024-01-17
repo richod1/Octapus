@@ -1,0 +1,25 @@
+{
+  "name": "octapus",
+  "version": "0.0.1",
+  "description": "A blazing fast, minimal backend framework for Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richod1"
+  },
+  "keywords": [
+    "web",
+    "api",
+    "backend",
+    "framework",
+    "fast"
+  ],
+  "author": "Degraft Frimpong <frimpsup@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.33.2"
+  }
+}
