@@ -29,6 +29,12 @@ app.get("/add",(req,res)=>{
 
 app.json({inflate:true})
 
+// use() static method
+app.use(async (req,res,next)=>{
+    console.log(`[${new Date()}] ${req.method} ${req.url}`);
+    await next();
+})
+
 // serving static file from assert dir
 app.static('/public',{index:['index.html']})
 
