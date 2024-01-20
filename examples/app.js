@@ -36,7 +36,7 @@ app.use(async (req,res,next)=>{
 })
 
 // serving static file from assert dir
-app.static('/public',{index:['index.html']})
+app.use(app.static('/public/template'))
 
 
 createServer(app).listen(3000,()=>{
