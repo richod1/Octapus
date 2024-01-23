@@ -38,6 +38,18 @@ app.use(async (req,res,next)=>{
 // serving static file from assert dir
 app.use(app.static('/public/template'))
 
+// render method()
+// const viewPath="/public/template"
+// app.setViewPath(viewPath);
+
+// app.get("/example",(req,res)=>{
+//     const RenderContent=app.render('example',{title:'Example Title'})
+    
+// })
+
+app.get("/data",(req,res)=>{
+    app.send(res,"<h1>Hello Octapus</h1>")
+})
 
 createServer(app).listen(3000,()=>{
     console.log(`server is up on port 3000`)
