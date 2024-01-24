@@ -1,6 +1,7 @@
 const {Router,createServer} =require("../lib/octapus")
 const path=require("path")
 const app=Router.octa();
+const {authorize,authenticate}=require("../lib/middleware/authMiddlware")
 
 // router.get("/",(req,res)=>res.end("Hello Octapus"))
 
@@ -46,6 +47,12 @@ app.use(app.static('/public/template'))
 //     const RenderContent=app.render('example',{title:'Example Title'})
     
 // })
+
+// usage of octapus-authMIddleware
+app.get("/secured-route",authenticate,authorize(['admin']),(req,res)=>{
+    app.send(`Hello, ${req.user.username}! You have access to this secured route`)
+})
+
 
 app.get("/data",(req,res)=>{
     app.send(res,"<h1>Hello Octapus</h1>")
