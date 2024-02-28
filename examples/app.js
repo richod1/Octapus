@@ -58,6 +58,9 @@ app.get("/data",(req,res)=>{
     app.send(res,"<h1>Hello Octapus</h1>")
 })
 
+// using the merge method
+app.merge()
+
 createServer(app).listen(3000,()=>{
     console.log(`server is up on port 3000`)
 })
